@@ -11,7 +11,7 @@ module Jekyll
       # replace it with one.  This is useful when migrating from a site
       # already built without this plugin.
       if File.exist? dest_path
-        return if hardlink? dest_path
+        return if hardlink? dest_path, path
         FileUtils.rm dest_path
       end
 
@@ -23,9 +23,9 @@ module Jekyll
 
     private
 
-    # Verifies the path has hardlinks
-    def hardlink?(path)
-      File.stat(path).nlink > 1
+    # Verifies the files are the same by checking their inode
+    def hardlink?(dest_path, path)
+      File.stat(path).ino == File.stat(dest_path).ino
     end
   end
 end

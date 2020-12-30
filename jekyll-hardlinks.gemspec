@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'jekyll-hardlinks'
-  spec.version       = '0.1.1'
+  spec.version       = '0.1.2'
   spec.authors       = %w[f]
   spec.email         = %w[f@sutty.nl]
 
@@ -8,7 +8,6 @@ Gem::Specification.new do |spec|
   spec.description   = 'Jekyll copies static files and duplicates storage use. Hard links point to the same file instead of making copies, thus saving storage.'
   spec.homepage      = "https://0xacab.org/sutty/jekyll/#{spec.name}"
   spec.license       = 'GPL-3.0'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata = {
     'bug_tracker_uri' => "#{spec.homepage}/issues",
@@ -30,7 +29,7 @@ Gem::Specification.new do |spec|
     '--quiet'
   ]
 
-  spec.required_ruby_version = '~> 2'
+  spec.required_ruby_version = '>= 2.6'
 
   spec.add_dependency 'jekyll', '~> 4'
 end
