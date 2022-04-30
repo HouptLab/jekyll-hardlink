@@ -18,7 +18,12 @@ module Jekyll
       self.class.mtimes[path] = mtime
 
       FileUtils.mkdir_p(File.dirname(dest_path))
-      FileUtils.ln(path, dest_path)
+
+      begin
+        FileUtils.ln(path, dest_path)
+      rescue Errno::EXDEV
+        copy_file(dest_path)
+      end
     end
 
     private
