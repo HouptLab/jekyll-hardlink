@@ -4,8 +4,8 @@ Jekyll copies static files and duplicates storage use. Hard links point
 to the same file instead of making copies, thus saving storage.
 
 **This plugin only works on file systems that support hard links.**  It
-won't work if you're generating the site in another filesystem, since
-cross-filesystem hard links aren't possible.
+will fallback to copying files if you're generating the site in another
+filesystem, since cross-filesystem hard links aren't possible.
 
 ## Installation
 
