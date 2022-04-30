@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'jekyll-hardlinks'
-  spec.version       = '0.1.2'
+  spec.version       = '0.2.0'
   spec.authors       = %w[f]
   spec.email         = %w[f@sutty.nl]
 
