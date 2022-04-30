@@ -22,6 +22,7 @@ module Jekyll
       begin
         FileUtils.ln(path, dest_path)
       rescue Errno::EXDEV
+        Jekyll.logger.warn 'Jekyll::StaticFile', "Cross-device link found, copying to #{dest_path} instead"
         copy_file(dest_path)
       end
     end
